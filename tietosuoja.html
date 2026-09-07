@@ -8,59 +8,179 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Open+Sans:wght@600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .privacy-container {
+      max-width: 720px;
+      width: 100%;
+      margin: 20px auto 40px;
+      padding: 36px 32px;
+      background: rgba(13, 20, 28, 0.86);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      text-align: left;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255, 255, 255, 0.78);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 22px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #ffffff;
+    }
+
+    .privacy-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .privacy-updated {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 28px;
+    }
+
+    .privacy-section {
+      margin-bottom: 22px;
+    }
+
+    .privacy-section h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .privacy-section p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .privacy-section a {
+      color: #93c5fd;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <div class="page-wrapper">
     <main class="hero-card">
-      <!-- Yläosan logo (identtinen etusivun kanssa) -->
+      <!-- Erillinen taustakuvakerros -->
+      <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+
+      <!-- Yläosan logo -->
       <header class="header">
         <a href="index.html" class="logo" style="text-decoration: none;">
           <span class="logo-text">Aalto Guard</span>
         </a>
       </header>
 
-      <!-- Sisäinen vieritysalue, joka pitää taustakuvan täysin liikkumattomana -->
+      <!-- Sisäinen vieritysalue -->
       <div class="privacy-scroll-wrapper">
         <div class="privacy-container">
           <a href="index.html" class="back-link">← Takaisin etusivulle</a>
           
           <h1 class="privacy-title">Tietosuojaseloste</h1>
-          <p class="privacy-updated">Päivitetty: 7.9.2026</p>
+          <p class="privacy-updated">Laadittu: 7.9.2026 (EU:n yleinen tietosuoja-asetus GDPR, artiklat 13 ja 14)</p>
 
           <section class="privacy-section">
             <h2>1. Rekisterinpitäjä</h2>
             <p>
-              Aalto Guard<br>
-              Yhteydenotot: info@aaltoguard.fi (tai ilmoitettu yhteyssähköposti)
+              Aalto Guard / Joakim Tuuli<br>
+              Sähköposti: <a href="mailto:joakim.tuuli@gmail.com">joakim.tuuli@gmail.com</a>
             </p>
           </section>
 
           <section class="privacy-section">
-            <h2>2. Mitä tietoja keräämme ja miksi?</h2>
+            <h2>2. Yhteyshenkilö rekisteriä koskevissa asioissa</h2>
             <p>
-              Keräämme ainoastaan sähköpostiosoitteesi, jonka annat vapaaehtoisesti liittyessäsi Aalto Guardin odotuslistalle.
-              Tietoja käytetään yksinomaan tiedottamiseen palvelun julkaisusta, ennakkoilmoittautumisesta ja kehityskuulumisista.
+              Joakim Tuuli<br>
+              Sähköposti: <a href="mailto:joakim.tuuli@gmail.com">joakim.tuuli@gmail.com</a>
             </p>
           </section>
 
           <section class="privacy-section">
-            <h2>3. Käsittelyn oikeusperuste</h2>
+            <h2>3. Rekisterin nimi</h2>
             <p>
-              Henkilötietojen käsittely perustuu käyttäjän antamaan nimenomaiseen suostumukseen (EU:n yleinen tietosuoja-asetus GDPR 6 artikla 1 kohta a-alakohta).
+              Aalto Guard -odotuslistan ja uutiskirjeen tilaajarekisteri
             </p>
           </section>
 
           <section class="privacy-section">
-            <h2>4. Tietojen säilytys ja luovutus</h2>
+            <h2>4. Henkilötietojen käsittelyn tarkoitus ja oikeusperuste</h2>
             <p>
-              Tietoja säilytetään suojatussa ympäristössä vain niin kauan kuin se on tarpeen julkaisutiedotusta varten. Tietoja ei koskaan myydä, vuokrata tai luovuteta kolmansille osapuolille suoramarkkinointitarkoituksiin.
+              Keräämme ainoastaan sähköpostiosoitteita. Tietoja käytetään yksinomaan viestintään ja tiedottamiseen liittyen Aalto Guardin kehitystyöhön, palvelun lanseeraukseen ja julkaisuihin. Tietoja ei käytetä muuhun tarkoitukseen.
+              <br><br>
+              <strong>Oikeusperuste:</strong> Käsittely perustuu rekisteröidyn antamaan nimenomaiseen suostumukseen (EU:n yleinen tietosuoja-asetus GDPR 6 artikla 1 kohta a). Rekisteröity antaa suostumuksensa syöttämällä sähköpostiosoitteensa odotuslistalomakkeelle.
             </p>
           </section>
 
           <section class="privacy-section">
-            <h2>5. Sinun oikeutesi</h2>
+            <h2>5. Rekisterin tietosisältö</h2>
             <p>
-              Sinulla on oikeus peruuttaa suostumuksesi ja pyytää sähköpostiosoitteesi poistamista listalta milloin tahansa ottamalla meihin yhteyttä.
+              Rekisteriin tallennetaan ainoastaan:
+            </p>
+            <ul style="margin-left: 20px; margin-top: 6px; font-size: 14px; line-height: 1.6; color: rgba(255, 255, 255, 0.84);">
+              <li>Sähköpostiosoite</li>
+              <li>Liittymisen ajankohta (aikaleima)</li>
+            </ul>
+          </section>
+
+          <section class="privacy-section">
+            <h2>6. Säännönmukaiset tietolähteet</h2>
+            <p>
+              Tiedot saadaan ainoastaan rekisteröidyltä itseltään hänen täyttäessään sähköpostiosoitteensa Aalto Guardin verkkosivuston lomakkeelle.
+            </p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>7. Tietojen luovutukset ja siirto EU:n tai ETA:n ulkopuolelle</h2>
+            <p>
+              Tietoja ei koskaan myydä, vuokrata tai luovuteta kolmansille osapuolille suoramarkkinointitarkoituksiin.
+              Tietojen teknisessä säilytyksessä hyödynnetään Googlen pilvipalvelua (Google Sheets), jossa tiedot suojataan alan standardien mukaisin menetelmin ja EU:n mallisopimuslausekkein (SCC).
+            </p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>8. Tietojen säilytysaika</h2>
+            <p>
+              Henkilötietoja säilytetään vain niin kauan kuin se on tarpeellista Aalto Guardin julkaisusta tiedottamiseksi, tai kunnes rekisteröity peruuttaa suostumuksensa ja pyytää tietojensa poistamista.
+            </p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>9. Rekisteröidyn oikeudet</h2>
+            <p>
+              Rekisteröidyllä on GDPR:n mukaisesti seuraavat oikeudet:
+            </p>
+            <ul style="margin-left: 20px; margin-top: 6px; font-size: 14px; line-height: 1.6; color: rgba(255, 255, 255, 0.84);">
+              <li><strong>Oikeus peruuttaa suostumus:</strong> Voit poistua listalta milloin tahansa ilmoittamalla siitä sähköpostitse osoitteeseen <a href="mailto:joakim.tuuli@gmail.com">joakim.tuuli@gmail.com</a>.</li>
+              <li><strong>Oikeus saada pääsy tietoihin:</strong> Oikeus tarkastaa itseään koskevat rekisteriin tallennetut henkilötiedot.</li>
+              <li><strong>Oikeus tietojen poistamiseen:</strong> Oikeus pyytää tietojensa poistamista rekisteristä ("oikeus tulla unohdetuksi").</li>
+              <li><strong>Oikeus tietojen oikaisemiseen:</strong> Oikeus pyytää virheellisten tietojen korjaamista.</li>
+              <li><strong>Oikeus tehdä valitus:</strong> Oikeus saattaa asia valvontaviranomaisen (Tietosuojavaltuutetun toimisto, <a href="https://tietosuoja.fi" target="_blank" rel="noopener">tietosuoja.fi</a>) käsiteltäväksi, mikäli katsot että henkilötietojesi käsittelyssä on rikottu tietosuojalainsäädäntöä.</li>
+            </ul>
+          </section>
+
+          <section class="privacy-section">
+            <h2>10. Automaattinen päätöksenteko ja profilointi</h2>
+            <p>
+              Tietoja ei käytetä automaattiseen päätöksentekoon eikä henkilöiden profilointiin.
             </p>
           </section>
         </div>
