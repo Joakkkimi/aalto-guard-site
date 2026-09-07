@@ -340,18 +340,27 @@ body.modal-open .hero-content {
   background: rgba(255, 255, 255, 0.12);
   border: none;
   color: #ffffff;
-  font-size: 22px;
   width: 34px;
   height: 34px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
   transition: background-color 0.2s ease;
 }
 
 .modal-close-btn:hover {
   background-color: rgba(255, 255, 255, 0.25);
+}
+
+.modal-close-btn svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  pointer-events: none;
 }
 
 .modal-body h4 {
