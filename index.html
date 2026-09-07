@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aalto Guard — Vesiturvallisuutta edistämässä</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Open+Sans:wght@600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <main class="hero-card" id="hero-card">
+      <!-- Yläosan logo -->
+      <header class="header">
+        <div class="logo">
+          <span class="logo-text">Aalto Guard</span>
+        </div>
+      </header>
+
+      <!-- Pääsisältö -->
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Vesiturvallisuutta <span class="italic-serif">edistämässä</span>
+        </h1>
+        <p class="hero-subtitle">
+          Liity sähköpostilistalle ja kuulet ensimmäisten joukossa julkaisusta
+        </p>
+
+        <!-- Sähköpostilomake -->
+        <form class="waitlist-form" id="waitlist-form">
+          <input 
+            type="email" 
+            id="email-input"
+            class="waitlist-input" 
+            placeholder="Sähköpostiosoite" 
+            required
+            aria-label="Sähköpostiosoite"
+          >
+          <button type="submit" id="submit-btn" class="waitlist-button">
+            Liity odotuslistalle
+          </button>
+        </form>
+
+        <!-- Tietosuojateksti laatikon alla -->
+        <p class="privacy-note">
+          Liittymällä listalle, hyväksyt 
+          <button type="button" class="privacy-link-btn" id="open-privacy-btn">tietosuojaselosteen</button>.
+        </p>
+
+        <!-- Palauteviesti onnistumisesta / virheestä -->
+        <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+      </div>
+
+      <!-- Frosted Glass Modal Overlay -->
+      <div class="modal-overlay" id="privacy-modal" aria-hidden="true">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-dialog" role="dialog" aria-labelledby="modal-title">
+          <div class="modal-header">
+            <h3 id="modal-title">Tietosuojaseloste</h3>
+            <button type="button" class="modal-close-btn" id="close-modal-btn" aria-label="Sulje">&times;</button>
+          </div>
+          <div class="modal-body">
+            <h4>1. Rekisterinpitäjä</h4>
+            <p>Aalto Guard &mdash; Yhteystiedot: info@aaltoguard.fi</p>
+            
+            <h4>2. Käyttötarkoitus ja käsittelyn peruste</h4>
+            <p>Sähköpostiosoitteesi kerätään suostumuksellasi vain ja ainoastaan Aalto Guard -palvelun lanseerauksesta tiedottamista varten.</p>
+            
+            <h4>3. Tietojen suoja ja luovutus</h4>
+            <p>Tietoja säilytetään suojatussa ympäristössä eikä niitä koskaan myydä tai luovuteta ulkopuolisille suoramarkkinointiin.</p>
+
+            <h4>4. Oikeutesi</h4>
+            <p>Voit peruuttaa suostumuksesi ja pyytää sähköpostiosoitteesi poistamista listalta milloin tahansa ilmoittamalla siitä meille.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

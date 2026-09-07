@@ -1,0 +1,431 @@
+/* ==========================================================================
+   AALTO GUARD - LOPULLINEN TYYLITIEDOSTO (ALLAS 3 + HIENOVARAISEN PIENI TUMMENNUS)
+   ========================================================================== */
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  min-height: 100dvh;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* Page Frame with white outer margin */
+.page-wrapper {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh;
+  padding: 16px;
+  display: flex;
+  background-color: #ffffff;
+}
+
+/* Hero Card Container */
+.hero-card {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100dvh - 32px);
+  min-height: calc(100dvh - 32px);
+  max-height: calc(100dvh - 32px);
+  border-radius: 28px;
+  overflow: hidden;
+  /* Allas 3 -kuva syvemmällä tummennuksella */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.40)),
+    url('pool-diagonal.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.14),
+    0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Header & Logo */
+.header {
+  width: 100%;
+  padding-top: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: filter 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  color: #ffffff;
+  user-select: none;
+}
+
+.logo-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.45);
+}
+
+/* Center Content */
+.hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 24px 70px;
+  max-width: 860px;
+  width: 100%;
+  margin: auto;
+  z-index: 10;
+  transition: filter 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
+}
+
+/* Välitön blurraus taustalle kun modaali on auki */
+body.modal-open .header,
+body.modal-open .hero-content {
+  filter: blur(14px);
+  opacity: 0.22;
+  transform: scale(0.985);
+  pointer-events: none;
+}
+
+/* Main Heading */
+.hero-title {
+  font-size: clamp(2.5rem, 5.8vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  margin-bottom: 18px;
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.8), 0 0 36px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title .italic-serif {
+  font-family: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  padding: 0 2px;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85), 0 0 24px rgba(0, 0, 0, 0.55);
+}
+
+/* Waitlist Email Form */
+.waitlist-form {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 9999px;
+  padding: 5px 6px 5px 22px;
+  box-shadow: 
+    0 16px 38px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 100%;
+}
+
+.waitlist-form:focus-within {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 
+    0 20px 48px rgba(0, 0, 0, 0.4),
+    0 0 0 3px rgba(255, 255, 255, 0.6);
+}
+
+.waitlist-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: 15px;
+  color: #111827;
+  width: 220px;
+  padding: 8px 0;
+}
+
+.waitlist-input::placeholder {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.waitlist-button {
+  border: none;
+  outline: none;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.waitlist-button:hover {
+  background-color: #f1f5f9;
+}
+
+.waitlist-button:active {
+  background-color: #e2e8f0;
+}
+
+/* Privacy Note */
+.privacy-note {
+  margin-top: 15px;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
+  text-align: center;
+}
+
+.privacy-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.privacy-link-btn:hover {
+  opacity: 0.8;
+}
+
+/* Feedback messages */
+.form-feedback {
+  margin-top: 12px;
+  font-size: 14px;
+  min-height: 20px;
+  transition: all 0.3s ease;
+}
+
+.form-feedback.success {
+  color: #86efac;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.form-feedback.error {
+  color: #fca5a5;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* ==========================================================================
+   FROSTED GLASS MODAL
+   ========================================================================== */
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.16s ease, visibility 0.16s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.modal-dialog {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 540px;
+  max-height: 82vh;
+  max-height: 82dvh;
+  background: rgba(13, 20, 28, 0.88);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  padding: 30px;
+  text-align: left;
+  transform: scale(0.94) translateY(12px);
+  opacity: 0;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  overflow-y: auto;
+}
+
+.modal-overlay.open .modal-dialog {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.modal-close-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #ffffff;
+  font-size: 22px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.modal-body h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
+.modal-body p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+/* ==========================================================================
+   RESPONSIVE & MOBILE
+   ========================================================================== */
+@media (max-width: 640px) {
+  .page-wrapper {
+    padding: 8px;
+  }
+
+  .hero-card {
+    border-radius: 20px;
+    height: calc(100dvh - 16px);
+    min-height: calc(100dvh - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+
+  .header {
+    padding-top: 20px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .hero-content {
+    padding: 12px 14px 40px;
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+    line-height: 1.18;
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.92rem;
+    margin-bottom: 22px;
+    line-height: 1.45;
+  }
+
+  .waitlist-form {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    padding: 8px;
+    gap: 8px;
+    border-radius: 22px;
+  }
+
+  .waitlist-input {
+    width: 100%;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 14.5px;
+  }
+
+  .waitlist-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .modal-dialog {
+    width: 92%;
+    max-height: 82dvh;
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .modal-header h3 {
+    font-size: 1.2rem;
+  }
+}
