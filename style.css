@@ -44,27 +44,43 @@ html, body {
   max-height: calc(100dvh - 32px);
   border-radius: 28px;
   overflow: hidden;
-  /* Allas 3 -kuva syvemmällä tummennuksella */
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.14),
+    0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Erillinen GPU-kiihdytetty taustakuvakerros (blurraantuu välittömästi ilman viivettä) */
+.hero-bg {
+  position: absolute;
+  inset: -28px;
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.40)),
     url('pool-diagonal.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  box-shadow: 
-    0 10px 40px rgba(0, 0, 0, 0.14),
-    0 1px 4px rgba(0, 0, 0, 0.06);
+  z-index: 0;
+  transition: filter 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: filter, transform;
+}
+
+/* Kun modaali avataan, koko taustakuva ja sisältö sumenevat 0ms viiveellä */
+body.modal-open .hero-bg {
+  filter: blur(22px) brightness(0.8);
+  transform: scale(1.08);
 }
 
 /* Header & Logo */
 .header {
+  position: relative;
   width: 100%;
   padding-top: 38px;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
-  transition: filter 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
+  transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  will-change: filter, opacity;
 }
 
 .logo {
@@ -96,15 +112,16 @@ html, body {
   width: 100%;
   margin: auto;
   z-index: 10;
-  transition: filter 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
+  transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  will-change: filter, opacity;
 }
 
-/* Välitön blurraus taustalle kun modaali on auki */
+/* Tekstisisällön välitön sumennus */
 body.modal-open .header,
 body.modal-open .hero-content {
-  filter: blur(14px);
-  opacity: 0.22;
-  transform: scale(0.985);
+  filter: blur(10px);
+  opacity: 0.15;
+  transform: scale(0.98);
   pointer-events: none;
 }
 
@@ -265,23 +282,19 @@ body.modal-open .hero-content {
   justify-content: center;
   z-index: 50;
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.16s ease, visibility 0.16s ease;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modal-overlay.open {
   opacity: 1;
-  visibility: visible;
   pointer-events: auto;
 }
 
 .modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.52);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.42);
 }
 
 .modal-dialog {
