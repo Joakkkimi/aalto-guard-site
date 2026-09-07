@@ -304,18 +304,20 @@ body.modal-open .hero-content {
   max-width: 540px;
   max-height: 82vh;
   max-height: 82dvh;
+  display: flex;
+  flex-direction: column;
   background: rgba(13, 20, 28, 0.88);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 24px;
-  padding: 30px;
+  padding: 28px 22px 28px 30px;
   text-align: left;
   transform: scale(0.94) translateY(12px);
   opacity: 0;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
   transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .modal-overlay.open .modal-dialog {
@@ -327,7 +329,9 @@ body.modal-open .hero-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  padding-right: 8px;
+  flex-shrink: 0;
 }
 
 .modal-header h3 {
@@ -361,6 +365,37 @@ body.modal-open .hero-content {
   height: 14px;
   display: block;
   pointer-events: none;
+}
+
+/* Sisältöalue saumattomalla lasi-scrollbarilla */
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 12px;
+  margin-right: -4px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+}
+
+/* Webkit (Chrome, Edge, Safari) saumaton ja smooth scrollbar */
+.modal-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 6px 0;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .modal-body h4 {
@@ -441,7 +476,7 @@ body.modal-open .hero-content {
   .modal-dialog {
     width: 92%;
     max-height: 82dvh;
-    padding: 24px 20px;
+    padding: 24px 16px 24px 22px;
     border-radius: 20px;
   }
 
