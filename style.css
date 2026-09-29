@@ -93,7 +93,7 @@ body.modal-open .hero-bg {
 }
 
 .logo-img {
-  height: 192px;
+  height: 42px;
   width: auto;
   display: block;
 }
@@ -431,7 +431,7 @@ body.modal-open .hero-content {
   }
 
   .logo-img {
-    height: 144px;
+    height: 34px;
   }
 
   .hero-content {
